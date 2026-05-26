@@ -6,26 +6,37 @@ GoodNeighbor is a Devvit app for the [Reddit Mod Tools & Migration Hackathon 202
 
 ---
 
-## Install in 30 seconds (for judges)
+## How judges install GoodNeighbor
 
-You do **not** need to clone this repo to try GoodNeighbor. The app is uploaded to the Devvit developer portal.
+GoodNeighbor is published to the **Devvit App Directory** as `goodneighbor-app`. Once the app clears Reddit's review queue, any Reddit user can install it on a subreddit they moderate.
 
-1. Go to **https://developers.reddit.com/apps/goodneighbor-app**.
-2. Click the green **Install** button (top right).
-3. Pick **any subreddit you moderate** from the dropdown and confirm. (If you don't moderate one already, create a private test sub in 10 seconds at https://www.reddit.com/subreddits/create.)
-4. Open that subreddit on Reddit (web or mobile app).
-5. Make a comment or post — your username is now scored. Then open any post or comment by another user → `⋮` menu → tap **`GoodNeighbor: endorse author`** / **`endorse commenter`**.
-6. Open the subreddit overflow `⋮` menu → **`GoodNeighbor: top contributors`** to see the leaderboard custom post.
+### Install via the developer portal
 
-The weekly MVP custom post will then auto-publish every Sunday 17:00 UTC.
+1. While logged into Reddit, open **https://developers.reddit.com/apps/goodneighbor-app**.
+2. On the app page, use the **Install** action and pick a subreddit you moderate from the dropdown.
+3. Confirm the install.
 
-The alternative for judges who prefer the CLI:
+If you don't moderate a subreddit yet, create a private test sub in 10 seconds at https://www.reddit.com/subreddits/create, then install onto that.
+
+### Install via the Devvit CLI
+
+From any machine with Node.js 22+:
 
 ```bash
+npx devvit login            # opens a browser, log in with your Reddit account
 npx devvit install goodneighbor-app r/<your_subreddit>
 ```
 
-A live demo install also lives at **r/GoodNeighborTest_NI** for browsing existing leaderboard posts.
+> **Note for early judging windows:** if the app is still in Reddit's review queue when you click the link, the page may show "not allowed" or "under review." In that case the live demo install on **r/GoodNeighborTest_NI** lets you browse existing leaderboard posts immediately, and the install link will start working as soon as review clears (typically within hours).
+
+### Then exercise it
+
+1. Open your installed subreddit on Reddit (web or mobile app).
+2. Make a comment or post — your username is now scored.
+3. Open any post or comment by another user → `⋮` menu → tap **`GoodNeighbor: endorse author`** / **`endorse commenter`**.
+4. Open the subreddit overflow `⋮` menu → **`GoodNeighbor: top contributors`** to see the leaderboard custom post.
+
+The weekly MVP custom post will then auto-publish every Sunday 17:00 UTC.
 
 ---
 
