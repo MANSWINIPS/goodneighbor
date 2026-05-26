@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "goodneighbor-app",
+  "permissions": {
+    "redis": true,
+    "reddit": {
+      "enable": true,
+      "scope": "moderator"
+    }
+  },
+  "post": {
+    "dir": "public",
+    "entrypoints": {
+      "default": {
+        "inline": true,
+        "entry": "splash.html"
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.js"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "GoodNeighbor: top contributors",
+        "description": "Publish this week's positive contributors leaderboard",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/publish-leaderboard"
+      },
+      {
+        "label": "GoodNeighbor: endorse author",
+        "description": "Endorse this post's author as a good neighbor",
+        "location": "post",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/endorse-post-author"
+      },
+      {
+        "label": "GoodNeighbor: endorse commenter",
+        "description": "Endorse this commenter as a good neighbor",
+        "location": "comment",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/endorse-commenter"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/app-install",
+    "onCommentCreate": "/internal/triggers/comment-create",
+    "onPostCreate": "/internal/triggers/post-create",
+    "onModAction": "/internal/triggers/mod-action"
+  },
+  "scheduler": {
+    "tasks": {
+      "weekly-mvp": {
+        "endpoint": "/internal/scheduler/weekly-mvp",
+        "cron": "0 17 * * 0"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types ./tools/build.ts --watch",
+    "build": "node --experimental-strip-types ./tools/build.ts --minify"
+  },
+  "dev": {
+    "subreddit": "goodneighbor_app_dev"
+  }
+}

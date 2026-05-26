@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="game.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, user-scalable=0"
+    />
+    <title>GoodNeighbor</title>
+  </head>
+  <body class="app">
+    <header class="header">
+      <h1 class="title" id="title">GoodNeighbor</h1>
+      <p class="subtitle" id="subtitle">Loading…</p>
+    </header>
+
+    <section class="self-stats" id="self-stats"></section>
+
+    <section class="leaderboard-wrap">
+      <div class="leaderboard-header">
+        <h2>Top contributors</h2>
+        <button class="ghost-button" id="refresh-button">Refresh</button>
+      </div>
+      <ol class="leaderboard" id="leaderboard"></ol>
+    </section>
+
+    <section class="endorse-row" id="endorse-row" style="display: none">
+      <input
+        class="endorse-input"
+        id="endorse-input"
+        type="text"
+        placeholder="Endorse a user (e.g. spez)"
+        autocomplete="off"
+      />
+      <button class="primary-button" id="endorse-button">Endorse</button>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="game.js" defer></script>
+  </body>
+</html>
