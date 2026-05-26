@@ -6,6 +6,29 @@ GoodNeighbor is a Devvit app for the [Reddit Mod Tools & Migration Hackathon 202
 
 ---
 
+## Install in 30 seconds (for judges)
+
+You do **not** need to clone this repo to try GoodNeighbor. The app is uploaded to the Devvit developer portal.
+
+1. Go to **https://developers.reddit.com/apps/goodneighbor-app**.
+2. Click the green **Install** button (top right).
+3. Pick **any subreddit you moderate** from the dropdown and confirm. (If you don't moderate one already, create a private test sub in 10 seconds at https://www.reddit.com/subreddits/create.)
+4. Open that subreddit on Reddit (web or mobile app).
+5. Make a comment or post — your username is now scored. Then open any post or comment by another user → `⋮` menu → tap **`GoodNeighbor: endorse author`** / **`endorse commenter`**.
+6. Open the subreddit overflow `⋮` menu → **`GoodNeighbor: top contributors`** to see the leaderboard custom post.
+
+The weekly MVP custom post will then auto-publish every Sunday 17:00 UTC.
+
+The alternative for judges who prefer the CLI:
+
+```bash
+npx devvit install goodneighbor-app r/<your_subreddit>
+```
+
+A live demo install also lives at **r/GoodNeighborTest_NI** for browsing existing leaderboard posts.
+
+---
+
 ## The problem
 
 Moderation tooling — including the rest of this hackathon — is overwhelmingly about catching bad behavior. But every long-running community knows the truth: the easiest way to reduce bad behavior is to **amplify the good** so it sets the cultural tone.
